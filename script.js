@@ -1,18 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => { const quotes = document.querySelectorAll(".quote"); quotes.forEach((quote, index) => { setTimeout(() => { quote.classList.add("fade-in"); }, index * 1000); });
+document.addEventListener("DOMContentLoaded", function () { const quoteContainer = document.querySelector(".quote-box"); quoteContainer.classList.add("fade-in");
 
-const exploreBtn = document.querySelector(".explore-btn");
-exploreBtn.addEventListener("mouseover", () => {
-    exploreBtn.classList.add("hover-effect");
-});
-exploreBtn.addEventListener("mouseleave", () => {
-    exploreBtn.classList.remove("hover-effect");
-});
+// Adding animation to the emphasized text
+const emphasizedText = document.querySelector(".emphasized");
+emphasizedText.classList.add("pulse");
 
-exploreBtn.addEventListener("click", () => {
-    exploreBtn.classList.add("button-click");
-    setTimeout(() => {
-        window.location.href = "mbti_selection.html";
-    }, 500);
+// Smooth scrolling effect for better user experience
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
 });
 
 });
