@@ -1,68 +1,16 @@
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #ffebf0, #cce7ff);
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-}
+/* General Styles */ body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #ffdde1, #ee9ca7, #c6ffdd); text-align: center; flex-direction: column; }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    max-width: 600px;
-}
+/* Welcome Text Styles */ .welcome-container { animation: fadeIn 2s ease-in-out; text-align: center; }
 
-.welcome {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #333;
-    animation: fadeIn 1.5s ease-in-out;
-}
+h1 { font-size: 3rem; color: #333; margin-bottom: 10px; }
 
-.dump-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ff4d6d;
-    animation: popUp 1.5s ease-in-out;
-}
+/* Dump Your Thoughts Text - Different Size, Color, Animation */ .dump-text { font-size: 3.5rem; font-weight: bold; color: #ff4081; font-family: 'Caveat', cursive; animation: bounce 2s infinite; }
 
-.quote-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+/* Quote Box */ .quote-box { background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px; max-width: 600px; margin-top: 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); font-size: 1.2rem; font-style: italic; color: #333; animation: fadeInUp 1.5s ease-in-out; }
 
-.quote-box {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #444;
-    max-width: 90%;
-}
+/* Animations */ @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-@keyframes popUp {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-@media (max-width: 600px) {
-    .welcome { font-size: 1.8rem; }
-    .dump-text { font-size: 2.2rem; }
-    .quote-box { font-size: 1rem; padding: 10px; }
-}
