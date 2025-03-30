@@ -30,7 +30,7 @@ continueButton.addEventListener("click", function () {
     if (selectedMBTI && selectedGender) {
         localStorage.setItem("selectedMBTI", selectedMBTI);
         localStorage.setItem("selectedGender", selectedGender);
-        window.location.href = "theme-selection.html";
+        window.location.href = "ThemeSelection.html";
     }
 });
 
