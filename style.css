@@ -1,18 +1,20 @@
-/* General Styles */ body { margin: 0; padding: 0; font-family: 'Arial', sans-serif; background: linear-gradient(to right, #ffffff, #a8e6cf, #ffdde1, #a0c4ff); display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; flex-direction: column; }
+body { font-family: Arial, sans-serif; background: linear-gradient(to bottom, white, lightgreen, pink, skyblue); text-align: center; padding: 20px; }
 
-/* Welcome Container */ .welcome-container { background: rgba(255, 255, 255, 0.8); padding: 30px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); max-width: 500px; }
+.container { max-width: 600px; margin: auto; padding: 20px; background: rgba(255, 255, 255, 0.8); border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
 
-.welcome-title { font-size: 28px; font-weight: bold; color: #333; }
+h1 { font-size: 24px; margin-bottom: 20px; }
 
-.welcome-subtitle { font-size: 20px; color: #555; margin-bottom: 20px; animation: fadeIn 2s ease-in-out; }
+.mbti-selection, .gender-selection { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; }
 
-/* Quote Box */ .quote-box { background: rgba(255, 255, 255, 0.6); padding: 15px; margin: 10px 0; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); font-style: italic; color: #444; transition: transform 0.3s ease; }
+.mbti-btn, .gender-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 120px; height: 140px; font-size: 16px; background: rgba(255, 255, 255, 0.9); border: 2px solid #ccc; border-radius: 10px; cursor: pointer; transition: 0.3s; text-align: center; padding: 10px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); }
 
-.quote-box:hover { transform: scale(1.05); }
+.mbti-btn img, .gender-btn img { width: 50px; height: 50px; margin-bottom: 5px; }
 
-/* Continue Button */ #continue-btn { display: inline-block; margin-top: 20px; padding: 12px 24px; font-size: 18px; color: white; background: #ff6b6b; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s ease; }
+.mbti-btn:hover, .gender-btn:hover { transform: scale(1.1); box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); }
 
-#continue-btn:hover { background: #ff4757; }
+#continue-btn { font-style: italic; color: white; background-color: green; font-family: "Georgia", serif; font-size: 18px; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
 
-/* Fade-in animation */ @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+#continue-btn:disabled { background-color: gray; cursor: not-allowed; }
+
+#continue-btn:hover:enabled { background-color: darkgreen; }
 
