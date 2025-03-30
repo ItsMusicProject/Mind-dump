@@ -1,15 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () { const quoteBoxes = document.querySelectorAll(".quote-box");
+function goToSelectionPage() { window.location.href = "selection.html"; }
 
-quoteBoxes.forEach(box => {
-    box.addEventListener("mouseover", () => {
-        box.style.transform = "scale(1.1)";
-        box.style.transition = "transform 0.3s ease";
-    });
-    
-    box.addEventListener("mouseout", () => {
-        box.style.transform = "scale(1)";
-    });
+document.addEventListener("DOMContentLoaded", function() { const continueButton = document.getElementById("continue-btn"); if (continueButton) { continueButton.addEventListener("click", goToSelectionPage); }
+
+// Fade-in effect for quotes
+const quotes = document.querySelectorAll(".quote-box");
+quotes.forEach((quote, index) => {
+    setTimeout(() => {
+        quote.style.opacity = "1";
+        quote.style.transform = "translateY(0)";
+    }, index * 500);
 });
+
+// Dynamic background animation
+document.body.classList.add("animated-bg");
 
 });
 
