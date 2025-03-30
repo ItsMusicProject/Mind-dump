@@ -1,12 +1,12 @@
-body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; font-family: 'Arial', sans-serif; text-align: center; overflow: hidden; }
+body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #1e3c72, #2a5298); font-family: 'Poppins', sans-serif; text-align: center; overflow: hidden; }
 
-.container { max-width: 90%; width: 600px; padding: 20px; border-radius: 15px; background: rgba(0, 0, 0, 0.6); box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); animation: fadeIn 1.5s ease-in-out; }
+.container { max-width: 90%; padding: 20px; color: white; animation: fadeIn 2s ease-in-out; }
 
-h1 { font-size: 28px; margin-bottom: 20px; }
+h1 { font-size: 2.5rem; margin-bottom: 20px; }
 
-.quote { font-size: 20px; font-style: italic; margin: 10px 0; padding: 15px; border-radius: 10px; background: rgba(255, 255, 255, 0.2); line-height: 1.5; word-wrap: break-word; }
+.quote { font-size: 1.5rem; font-style: italic; background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 10px; margin-bottom: 15px; line-height: 1.5; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
 
-@media (max-width: 768px) { .container { width: 90%; padding: 15px; } .quote { font-size: 18px; padding: 10px; } h1 { font-size: 24px; } }
+@media (max-width: 768px) { h1 { font-size: 2rem; } .quote { font-size: 1.2rem; padding: 10px; } }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 480px) { .quote { font-size: 1rem; padding: 8px; word-wrap: break-word; } }
 
