@@ -1,0 +1,12 @@
+/* General styles */ body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #ff9a9e, #fad0c4); text-align: center; }
+
+.container { max-width: 600px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+
+h1 { font-size: 24px; color: #333; }
+
+.quote { font-style: italic; font-size: 18px; color: #555; margin: 15px 0; }
+
+.button { display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #ff6b81; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s; }
+
+.button:hover { background-color: #e63950; }
+
