@@ -1,12 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () { // Add animation class after a short delay setTimeout(() => { document.querySelector(".welcome-text").classList.add("fade-in"); document.querySelector(".sub-text").classList.add("bounce"); }, 500);
+document.addEventListener("DOMContentLoaded", function () { const quoteBoxes = document.querySelectorAll(".quote-box");
 
-// Fade in quotes
-const quotes = document.querySelectorAll(".quote-box");
-let delay = 1000;
-quotes.forEach((quote, index) => {
-    setTimeout(() => {
-        quote.classList.add("fade-in");
-    }, delay * (index + 1));
+quoteBoxes.forEach(box => {
+    box.addEventListener("mouseover", () => {
+        box.style.transform = "scale(1.1)";
+        box.style.transition = "transform 0.3s ease";
+    });
+    
+    box.addEventListener("mouseout", () => {
+        box.style.transform = "scale(1)";
+    });
 });
 
 });
