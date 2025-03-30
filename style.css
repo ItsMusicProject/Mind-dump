@@ -1,18 +1,14 @@
-body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #141e30, #243b55); height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; color: white; overflow: hidden; }
+/* General Styles */ body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
 
-.container { max-width: 90%; padding: 20px; }
+.container { max-width: 90%; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
 
-h1 { font-size: 3rem; font-weight: bold; animation: fadeIn 2s ease-in-out; }
+h1 { font-size: 2.5em; margin-bottom: 10px; animation: fadeIn 1.5s ease-in-out; }
 
-h2 { font-size: 2rem; font-weight: bold; color: #ffcc00; margin-top: -10px; animation: slideIn 2s ease-in-out; }
+h2 { font-size: 1.8em; color: #ffcc00; font-weight: bold; text-transform: uppercase; animation: pulseText 2s infinite alternate; }
 
-.quote-box { background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); margin-top: 20px; animation: fadeIn 2s ease-in-out; }
+.quote-box { background: rgba(0, 0, 0, 0.6); padding: 15px; border-radius: 10px; max-width: 600px; margin: 20px auto; font-size: 1.2em; line-height: 1.5; animation: fadeIn 2s ease-in-out; }
 
-p { font-size: 1.2rem; line-height: 1.5; margin: 10px 0; }
+/* Animations */ @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-@keyframes slideIn { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-
-@media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 1.8rem; } p { font-size: 1rem; } }
+@keyframes pulseText { 0% { transform: scale(1); color: #ffcc00; } 100% { transform: scale(1.1); color: #ff9900; } }
 
