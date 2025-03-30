@@ -1,6 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const quotes = document.querySelectorAll('.quote-box p');
-    quotes.forEach((quote, index) => {
-        quote.style.animation = `fadeIn 2s ease-out ${index}s`;
-    });
+document.addEventListener("DOMContentLoaded", () => { const welcomeText = document.querySelector(".welcome"); const dumpText = document.querySelector(".dump-text"); const quotes = document.querySelectorAll(".quote-box");
+
+// Adding a slight delay to animations for better visibility
+setTimeout(() => {
+    welcomeText.style.opacity = "1";
+    dumpText.style.opacity = "1";
+}, 500);
+
+quotes.forEach((quote, index) => {
+    setTimeout(() => {
+        quote.style.opacity = "1";
+        quote.style.transform = "translateY(0)";
+    }, 800 + index * 300);
 });
+
+});
+
