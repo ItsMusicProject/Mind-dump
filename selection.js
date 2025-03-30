@@ -1,47 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () { const mbtiButtons = document.querySelectorAll(".mbti-btn"); const genderButtons = document.querySelectorAll(".gender-btn"); const continueButton = document.getElementById("continue-btn"); let selectedMBTI = null; let selectedGender = null;
 
-// Function to update button selection
-function updateSelection(buttons, selectedValue, type) {
-    buttons.forEach(button => button.classList.remove("selected"));
-    selectedValue.classList.add("selected");
-    return selectedValue.dataset[type];
-}
-
-// MBTI selection event
-mbtiButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        selectedMBTI = updateSelection(mbtiButtons, this, "mbti");
-        checkSelection();
-    });
-});
-
-// Gender selection event
-genderButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        selectedGender = updateSelection(genderButtons, this, "gender");
-        checkSelection();
-    });
-});
-
-// Enable the continue button if both MBTI and gender are selected
 function checkSelection() {
     if (selectedMBTI && selectedGender) {
-        continueButton.classList.add("active");
-        continueButton.removeAttribute("disabled");
+        continueButton.disabled = false;
     } else {
-        continueButton.classList.remove("active");
-        continueButton.setAttribute("disabled", "true");
+        continueButton.disabled = true;
     }
 }
 
-// Redirect to the next page when continue button is clicked
+mbtiButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        mbtiButtons.forEach(btn => btn.classList.remove("selected"));
+        this.classList.add("selected");
+        selectedMBTI = this.dataset.mbti;
+        checkSelection();
+    });
+});
+
+genderButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        genderButtons.forEach(btn => btn.classList.remove("selected"));
+        this.classList.add("selected");
+        selectedGender = this.dataset.gender;
+        checkSelection();
+    });
+});
+
 continueButton.addEventListener("click", function () {
     if (selectedMBTI && selectedGender) {
         localStorage.setItem("selectedMBTI", selectedMBTI);
         localStorage.setItem("selectedGender", selectedGender);
-        window.location.href = "theme-selection.html"; // Change to your next page
+        window.location.href = "theme-selection.html";
     }
 });
+
+// Smooth fade-in animation for selection boxes
+document.querySelectorAll(".mbti-btn, .gender-btn").forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(20px)";
+    setTimeout(() => {
+        el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        el.style.opacity = 1;
+        el.style.transform = "translateY(0)";
+    }, 300);
+});
+
+// Continue button animation
+continueButton.style.opacity = 0;
+setTimeout(() => {
+    continueButton.style.transition = "opacity 1s ease";
+    continueButton.style.opacity = 1;
+}, 500);
 
 });
 
