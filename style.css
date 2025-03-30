@@ -1,12 +1,20 @@
-/* General styles */ body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #ff9a9e, #fad0c4); text-align: center; }
+body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: linear-gradient(to bottom right, #FFDEE9, #B5FFFC); text-align: center; overflow: hidden; }
 
-.container { max-width: 600px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+#welcome-container { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; }
 
-h1 { font-size: 24px; color: #333; }
+h1 { font-size: 3rem; font-weight: bold; color: #333; margin-bottom: 1rem; animation: fadeIn 2s ease-in-out; }
 
-.quote { font-style: italic; font-size: 18px; color: #555; margin: 15px 0; }
+.quote { font-size: 1.5rem; font-style: italic; color: #555; margin: 1rem 0; opacity: 0; animation: fadeInText 2s ease-in-out forwards; }
 
-.button { display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #ff6b81; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s; }
+.quote:nth-child(2) { animation-delay: 1s; }
 
-.button:hover { background-color: #e63950; }
+.quote:nth-child(3) { animation-delay: 2s; }
+
+#explore-button { background: #FF6B6B; color: white; padding: 12px 24px; font-size: 1.2rem; border: none; border-radius: 30px; cursor: pointer; transition: all 0.3s ease-in-out; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); }
+
+#explore-button:hover { background: #FF4040; transform: scale(1.1); }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes fadeInText { from { opacity: 0; } to { opacity: 1; } }
 
