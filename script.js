@@ -1,18 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () { const quoteContainer = document.querySelector(".quote-box"); quoteContainer.classList.add("fade-in");
-
-// Adding animation to the emphasized text
-const emphasizedText = document.querySelector(".emphasized");
-emphasizedText.classList.add("pulse");
-
-// Smooth scrolling effect for better user experience
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    const quotes = document.querySelectorAll('.quote-box p');
+    quotes.forEach((quote, index) => {
+        quote.style.animation = `fadeIn 2s ease-out ${index}s`;
     });
 });
-
-});
-
